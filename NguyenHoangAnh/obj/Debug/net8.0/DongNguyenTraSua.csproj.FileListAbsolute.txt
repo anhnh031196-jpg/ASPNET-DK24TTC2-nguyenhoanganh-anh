@@ -1,0 +1,9 @@
+C:\Users\Kai\source\repos\DongNguyenTraSua\obj\Debug\net8.0\DongNguyenTraSua.csproj.AssemblyReference.cache
+C:\Users\Kai\source\repos\DongNguyenTraSua\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Kai\source\repos\DongNguyenTraSua\obj\Debug\net8.0\DongNguyenTraSua.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kai\source\repos\DongNguyenTraSua\obj\Debug\net8.0\DongNguyenTraSua.AssemblyInfoInputs.cache
+C:\Users\Kai\source\repos\DongNguyenTraSua\obj\Debug\net8.0\DongNguyenTraSua.AssemblyInfo.cs
+C:\Users\Kai\source\repos\DongNguyenTraSua\obj\Debug\net8.0\DongNguyenTraSua.csproj.CoreCompileInputs.cache
+C:\Users\Kai\source\repos\DongNguyenTraSua\obj\Debug\net8.0\DongNguyenTraSua.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Kai\source\repos\DongNguyenTraSua\obj\Debug\net8.0\DongNguyenTraSua.RazorAssemblyInfo.cache
+C:\Users\Kai\source\repos\DongNguyenTraSua\obj\Debug\net8.0\DongNguyenTraSua.RazorAssemblyInfo.cs
