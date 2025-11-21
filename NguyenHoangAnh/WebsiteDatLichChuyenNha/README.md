@@ -1,10 +1,10 @@
-# 🚚 **Website Đặt Lịch Chuyển Nhà - MoveMaster**
+# 🚚 **Website Đặt Lịch Chuyển Nhà - ANHNH DK24TTC2**
 
 ---
 
 ## 📖 Giới thiệu
 
-Website **MoveMaster** là một hệ thống đặt lịch chuyển nhà được xây dựng bằng **ASP.NET Core MVC**. Ứng dụng hỗ trợ cả **khách hàng** và **quản trị viên** với các chức năng đầy đủ: tạo đơn đặt lịch, tính phí tự động, tra cứu, quản lý trạng thái, đánh giá dịch vụ và phản hồi từ admin.
+Website **ANHNH DK24TTC2** là một hệ thống đặt lịch chuyển nhà được xây dựng bằng **ASP.NET Core MVC**. Ứng dụng hỗ trợ cả **khách hàng** và **quản trị viên** với các chức năng đầy đủ: tạo đơn đặt lịch, tính phí tự động, tra cứu, quản lý trạng thái, đánh giá dịch vụ và phản hồi từ admin.
 
 ---
 
@@ -158,6 +158,6 @@ Mọi đóng góp đều được hoan nghênh! Hãy fork repo, tạo pull reque
 
 ---
 
-**Phát triển bởi:** *MoveMaster Team*  
+**Phát triển bởi:** ANHNH DK24TTC2*  
 **Ngày tạo:** 21/11/2025  
 **Phiên bản hiện tại:** `v1.2.0`
