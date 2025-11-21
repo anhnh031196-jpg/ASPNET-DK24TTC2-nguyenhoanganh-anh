@@ -1,0 +1,140 @@
+@model WebsiteDatLichChuyenNha.Models.Booking
+
+@{
+    ViewData["Title"] = "Chi Tiết Đơn Hàng";
+}
+
+<div class="fade-in">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>📦 Chi Tiết Đơn Hàng #@Model.Id</h2>
+        <a asp-action="Bookings" class="btn btn-outline-primary">← Quay Lại</a>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">📋 Thông Tin Đơn Hàng</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <strong>Khách Hàng:</strong>
+                            <p>@Model.CustomerName</p>
+                        </div>
+                        <div class="col-md-6">
+                            <strong>Số Điện Thoại:</strong>
+                            <p>@Model.PhoneNumber</p>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <strong>Ngày Chuyển:</strong>
+                            <p>@Model.MoveDate.ToString("dd/MM/yyyy")</p>
+                        </div>
+                        <div class="col-md-6">
+                            <strong>Ngày Tạo:</strong>
+                            <p>@Model.CreatedAt.ToString("dd/MM/yyyy HH:mm")</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>Địa Chỉ Đi:</strong>
+                        <p>@Model.FromAddress</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>Địa Chỉ Đến:</strong>
+                        <p>@Model.ToAddress</p>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <strong>Khoảng Cách:</strong>
+                            <p>@Model.Distance km</p>
+                        </div>
+                        <div class="col-md-6">
+                            <strong>Ước Tính Chi Phí:</strong>
+                            <p class="text-primary fw-bold">@Model.EstimatedCost.ToString("N0") VNĐ</p>
+                        </div>
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(Model.Notes))
+                    {
+                        <div class="mb-3">
+                            <strong>Ghi Chú Khách Hàng:</strong>
+                            <p>@Model.Notes</p>
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(Model.AdminNotes))
+                    {
+                        <div class="alert alert-info">
+                            <strong>📝 Ghi Chú Admin:</strong>
+                            <p class="mb-0">@Model.AdminNotes</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">⚙️ Cập Nhật Trạng Thái</h5>
+                </div>
+                <div class="card-body">
+                    <form asp-action="UpdateStatus" method="post">
+                        <input type="hidden" name="id" value="@Model.Id" />
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Trạng Thái Hiện Tại:</label>
+                            @if (Model.Status == "Mới")
+                            {
+                                <p><span class="badge badge-new">Mới</span></p>
+                            }
+                            else if (Model.Status == "Đã xác nhận")
+                            {
+                                <p><span class="badge badge-confirmed">Đã xác nhận</span></p>
+                            }
+                            else if (Model.Status == "Đang xử lý")
+                            {
+                                <p><span class="badge badge-processing">Đang xử lý</span></p>
+                            }
+                            else if (Model.Status == "Hoàn thành")
+                            {
+                                <p><span class="badge badge-completed">Hoàn thành</span></p>
+                            }
+                            else
+                            {
+                                <p><span class="badge badge-cancelled">@Model.Status</span></p>
+                            }
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="status" class="form-label fw-bold">Cập Nhật Trạng Thái:</label>
+                            <select class="form-select" id="status" name="status" required>
+                                <option value="Mới" selected="@(Model.Status == "Mới")">Mới</option>
+                                <option value="Đã xác nhận" selected="@(Model.Status == "Đã xác nhận")">Đã xác nhận</option>
+                                <option value="Đang xử lý" selected="@(Model.Status == "Đang xử lý")">Đang xử lý</option>
+                                <option value="Hoàn thành" selected="@(Model.Status == "Hoàn thành")">Hoàn thành</option>
+                                <option value="Hủy" selected="@(Model.Status == "Hủy")">Hủy</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="adminNotes" class="form-label fw-bold">Ghi Chú / Phân Công:</label>
+                            <textarea class="form-control" id="adminNotes" name="adminNotes" rows="4" placeholder="Ví dụ: Phân công cho đội A, xe tải 5 tấn...">@Model.AdminNotes</textarea>
+                            <small class="text-muted">Ghi chú này chỉ admin mới thấy</small>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">💾 Lưu Thay Đổi</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

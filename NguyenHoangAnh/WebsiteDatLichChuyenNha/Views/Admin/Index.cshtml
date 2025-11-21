@@ -1,0 +1,139 @@
+@model List<WebsiteDatLichChuyenNha.Models.Booking>
+
+@{
+    ViewData["Title"] = "Quản Trị - Dashboard";
+}
+
+<div class="fade-in">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>🎛️ Bảng Điều Khiển Quản Trị</h2>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary">Về Trang Chủ</a>
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="stat-card text-center">
+                <div class="stat-icon">📊</div>
+                <div class="stat-value">@ViewBag.TotalBookings</div>
+                <div class="stat-label">Tổng Đơn Hàng</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card text-center">
+                <div class="stat-icon">🆕</div>
+                <div class="stat-value">@ViewBag.NewBookings</div>
+                <div class="stat-label">Đơn Mới</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card text-center">
+                <div class="stat-icon">⚙️</div>
+                <div class="stat-value">@ViewBag.ProcessingBookings</div>
+                <div class="stat-label">Đang Xử Lý</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card text-center">
+                <div class="stat-icon">✅</div>
+                <div class="stat-value">@ViewBag.CompletedBookings</div>
+                <div class="stat-label">Hoàn Thành</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">⚡ Truy Cập Nhanh</h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex gap-2 flex-wrap">
+                        <a asp-action="Bookings" class="btn btn-primary">📋 Quản Lý Đơn Hàng</a>
+                        <a asp-action="Customers" class="btn btn-info text-white">👥 Quản Lý Khách Hàng</a>
+                        <a asp-action="Reviews" class="btn btn-warning text-white">⭐ Quản Lý Đánh Giá</a>
+                        <a asp-action="Pricing" class="btn btn-success text-white">💰 Quản Lý Bảng Giá</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Bookings -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">📦 Đơn Hàng Gần Đây</h5>
+                </div>
+                <div class="card-body">
+                    @if (Model.Count == 0)
+                    {
+                        <div class="alert alert-info text-center">
+                            <p class="mb-0">Chưa có đơn hàng nào.</p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Mã</th>
+                                        <th>Khách Hàng</th>
+                                        <th>SĐT</th>
+                                        <th>Ngày Chuyển</th>
+                                        <th>Khoảng Cách</th>
+                                        <th>Chi Phí</th>
+                                        <th>Trạng Thái</th>
+                                        <th>Hành Động</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var booking in Model.Take(10))
+                                    {
+                                        <tr>
+                                            <td><strong>#@booking.Id</strong></td>
+                                            <td>@booking.CustomerName</td>
+                                            <td>@booking.PhoneNumber</td>
+                                            <td>@booking.MoveDate.ToString("dd/MM/yyyy")</td>
+                                            <td>@booking.Distance km</td>
+                                            <td>@booking.EstimatedCost.ToString("N0") VNĐ</td>
+                                            <td>
+                                                @if (booking.Status == "Mới")
+                                                {
+                                                    <span class="badge badge-new">Mới</span>
+                                                }
+                                                else if (booking.Status == "Đã xác nhận")
+                                                {
+                                                    <span class="badge badge-confirmed">Đã xác nhận</span>
+                                                }
+                                                else if (booking.Status == "Đang xử lý")
+                                                {
+                                                    <span class="badge badge-processing">Đang xử lý</span>
+                                                }
+                                                else if (booking.Status == "Hoàn thành")
+                                                {
+                                                    <span class="badge badge-completed">Hoàn thành</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge badge-cancelled">@booking.Status</span>
+                                                }
+                                            </td>
+                                            <td>
+                                                <a asp-action="BookingDetails" asp-route-id="@booking.Id" class="btn btn-sm btn-outline-primary">Chi Tiết</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

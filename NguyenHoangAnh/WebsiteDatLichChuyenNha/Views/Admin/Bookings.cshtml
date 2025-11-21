@@ -1,0 +1,86 @@
+@model List<WebsiteDatLichChuyenNha.Models.Booking>
+
+@{
+    ViewData["Title"] = "Quản Lý Đơn Hàng";
+}
+
+<div class="fade-in">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>📋 Quản Lý Đơn Hàng</h2>
+        <a asp-action="Index" class="btn btn-outline-primary">← Về Dashboard</a>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            @if (Model.Count == 0)
+            {
+                <div class="alert alert-info text-center">
+                    <p class="mb-0">Chưa có đơn hàng nào.</p>
+                </div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Mã</th>
+                                <th>Khách Hàng</th>
+                                <th>SĐT</th>
+                                <th>Ngày Chuyển</th>
+                                <th>Từ</th>
+                                <th>Đến</th>
+                                <th>Khoảng Cách</th>
+                                <th>Chi Phí</th>
+                                <th>Trạng Thái</th>
+                                <th>Ngày Tạo</th>
+                                <th>Hành Động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var booking in Model)
+                            {
+                                <tr>
+                                    <td><strong>#@booking.Id</strong></td>
+                                    <td>@booking.CustomerName</td>
+                                    <td>@booking.PhoneNumber</td>
+                                    <td>@booking.MoveDate.ToString("dd/MM/yyyy")</td>
+                                    <td>@booking.FromAddress</td>
+                                    <td>@booking.ToAddress</td>
+                                    <td>@booking.Distance km</td>
+                                    <td>@booking.EstimatedCost.ToString("N0") VNĐ</td>
+                                    <td>
+                                        @if (booking.Status == "Mới")
+                                        {
+                                            <span class="badge badge-new">Mới</span>
+                                        }
+                                        else if (booking.Status == "Đã xác nhận")
+                                        {
+                                            <span class="badge badge-confirmed">Đã xác nhận</span>
+                                        }
+                                        else if (booking.Status == "Đang xử lý")
+                                        {
+                                            <span class="badge badge-processing">Đang xử lý</span>
+                                        }
+                                        else if (booking.Status == "Hoàn thành")
+                                        {
+                                            <span class="badge badge-completed">Hoàn thành</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-cancelled">@booking.Status</span>
+                                        }
+                                    </td>
+                                    <td>@booking.CreatedAt.ToString("dd/MM/yyyy HH:mm")</td>
+                                    <td>
+                                        <a asp-action="BookingDetails" asp-route-id="@booking.Id" class="btn btn-sm btn-primary">Chi Tiết</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>

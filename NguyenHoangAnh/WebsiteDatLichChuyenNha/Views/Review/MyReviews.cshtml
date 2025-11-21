@@ -1,0 +1,73 @@
+@model List<WebsiteDatLichChuyenNha.Models.Review>
+
+@{
+    ViewData["Title"] = "Đánh Giá Của Tôi";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card fade-in">
+            <div class="card-header">
+                <h4 class="mb-0">⭐ Đánh Giá Của Tôi</h4>
+            </div>
+            <div class="card-body">
+                @if (Model.Count == 0)
+                {
+                    <div class="alert alert-info text-center">
+                        <p class="mb-0">Bạn chưa có đánh giá nào.</p>
+                    </div>
+                }
+                else
+                {
+                    @foreach (var review in Model)
+                    {
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <div>
+                                        <h6 class="mb-1">Đơn Hàng #@review.BookingId</h6>
+                                        <div class="text-warning mb-2">
+                                            @for (int i = 0; i < review.Rating; i++)
+                                            {
+                                                <span>★</span>
+                                            }
+                                            @for (int i = review.Rating; i < 5; i++)
+                                            {
+                                                <span class="text-muted">★</span>
+                                            }
+                                        </div>
+                                    </div>
+                                    <small class="text-muted">@review.CreatedAt.ToString("dd/MM/yyyy HH:mm")</small>
+                                </div>
+
+                                <p class="mb-2">@review.Comment</p>
+
+                                @if (!string.IsNullOrEmpty(review.AdminReply))
+                                {
+                                    <div class="alert alert-light mt-3">
+                                        <strong>💬 Phản Hồi Từ Nguyen Hoang Anh:</strong>
+                                        <p class="mb-0 mt-2">@review.AdminReply</p>
+                                        @if (review.RepliedAt.HasValue)
+                                        {
+                                            <small class="text-muted">@review.RepliedAt.Value.ToString("dd/MM/yyyy HH:mm")</small>
+                                        }
+                                    </div>
+                                }
+
+                                <div class="mt-2">
+                                    <span class="badge @(review.IsPublic ? "bg-success" : "bg-secondary")">
+                                        @(review.IsPublic ? "Công khai" : "Riêng tư")
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+                <div class="text-center mt-3">
+                    <a asp-controller="Booking" asp-action="History" class="btn btn-outline-primary">← Về Lịch Sử Đơn Hàng</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

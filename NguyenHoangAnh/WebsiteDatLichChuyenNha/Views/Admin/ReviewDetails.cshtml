@@ -1,0 +1,125 @@
+@model WebsiteDatLichChuyenNha.Models.Review
+
+@{
+    ViewData["Title"] = "Chi Tiết Đánh Giá";
+}
+
+<div class="fade-in">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>⭐ Chi Tiết Đánh Giá #@Model.Id</h2>
+        <a asp-action="Reviews" class="btn btn-outline-primary">← Quay Lại</a>
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">📋 Thông Tin Đánh Giá</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <strong>Khách Hàng:</strong>
+                        <p>@Model.User?.FullName (@Model.User?.Email)</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>Đơn Hàng:</strong>
+                        <p><a asp-action="BookingDetails" asp-route-id="@Model.BookingId">#@Model.BookingId</a></p>
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>Đánh Giá:</strong>
+                        <div class="text-warning" style="font-size: 1.5rem;">
+                            @for (int i = 0; i < Model.Rating; i++)
+                            {
+                                <span>★</span>
+                            }
+                            @for (int i = Model.Rating; i < 5; i++)
+                            {
+                                <span class="text-muted">★</span>
+                            }
+                            <span class="text-dark ms-2">(@Model.Rating/5)</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>Nhận Xét:</strong>
+                        <p class="mt-2">@Model.Comment</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>Ngày Đánh Giá:</strong>
+                        <p>@Model.CreatedAt.ToString("dd/MM/yyyy HH:mm")</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>Trạng Thái:</strong>
+                        <p>
+                            <span class="badge @(Model.IsPublic ? "bg-success" : "bg-secondary")">
+                                @(Model.IsPublic ? "Công khai" : "Riêng tư")
+                            </span>
+                        </p>
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(Model.AdminReply))
+                    {
+                        <div class="alert alert-info">
+                            <strong>💬 Phản Hồi Hiện Tại:</strong>
+                            <p class="mb-0 mt-2">@Model.AdminReply</p>
+                            @if (Model.RepliedAt.HasValue)
+                            {
+                                <small class="text-muted">Phản hồi lúc: @Model.RepliedAt.Value.ToString("dd/MM/yyyy HH:mm")</small>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h5 class="mb-0">💬 Phản Hồi</h5>
+                </div>
+                <div class="card-body">
+                    <form asp-action="ReplyReview" method="post">
+                        <input type="hidden" name="id" value="@Model.Id" />
+
+                        <div class="mb-3">
+                            <label for="adminReply" class="form-label fw-bold">Nội Dung Phản Hồi:</label>
+                            <textarea class="form-control" id="adminReply" name="adminReply" rows="5" placeholder="Nhập phản hồi của bạn...">@Model.AdminReply</textarea>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">💾 Lưu Phản Hồi</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">⚙️ Hành Động</h5>
+                </div>
+                <div class="card-body">
+                    <form asp-action="ToggleReviewVisibility" method="post">
+                        <input type="hidden" name="id" value="@Model.Id" />
+                        <div class="d-grid">
+                            <button type="submit" class="btn @(Model.IsPublic ? "btn-warning" : "btn-success")">
+                                @(Model.IsPublic ? "🔒 Ẩn Đánh Giá" : "👁️ Hiển Thị Công Khai")
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

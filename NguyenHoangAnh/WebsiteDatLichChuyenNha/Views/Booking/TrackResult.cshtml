@@ -1,0 +1,84 @@
+@model List<WebsiteDatLichChuyenNha.Models.Booking>
+
+@{
+    ViewData["Title"] = "Kết Quả Tra Cứu";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card fade-in">
+            <div class="card-header">
+                <h4 class="mb-0">📋 Lịch Sử Đặt Lịch</h4>
+            </div>
+            <div class="card-body">
+                @if (Model.Count == 0)
+                {
+                    <div class="alert alert-warning text-center">
+                        <p class="mb-0">Không tìm thấy đơn hàng nào với số điện thoại này.</p>
+                    </div>
+                    <div class="text-center">
+                        <a asp-action="Track" class="btn btn-primary">Thử Lại</a>
+                    </div>
+                }
+                else
+                {
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Mã Đơn</th>
+                                    <th>Ngày Chuyển</th>
+                                    <th>Từ</th>
+                                    <th>Đến</th>
+                                    <th>Khoảng Cách</th>
+                                    <th>Chi Phí</th>
+                                    <th>Trạng Thái</th>
+                                    <th>Ngày Tạo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var booking in Model)
+                                {
+                                    <tr>
+                                        <td><strong>#@booking.Id</strong></td>
+                                        <td>@booking.MoveDate.ToString("dd/MM/yyyy")</td>
+                                        <td>@booking.FromAddress</td>
+                                        <td>@booking.ToAddress</td>
+                                        <td>@booking.Distance km</td>
+                                        <td>@booking.EstimatedCost.ToString("N0") VNĐ</td>
+                                        <td>
+                                            @if (booking.Status == "Mới")
+                                            {
+                                                <span class="badge badge-new">Mới</span>
+                                            }
+                                            else if (booking.Status == "Đã xác nhận")
+                                            {
+                                                <span class="badge badge-confirmed">Đã xác nhận</span>
+                                            }
+                                            else if (booking.Status == "Đang xử lý")
+                                            {
+                                                <span class="badge badge-processing">Đang xử lý</span>
+                                            }
+                                            else if (booking.Status == "Hoàn thành")
+                                            {
+                                                <span class="badge badge-completed">Hoàn thành</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge badge-cancelled">@booking.Status</span>
+                                            }
+                                        </td>
+                                        <td>@booking.CreatedAt.ToString("dd/MM/yyyy HH:mm")</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary">Về Trang Chủ</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

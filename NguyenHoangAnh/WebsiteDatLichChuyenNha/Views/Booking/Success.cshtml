@@ -1,0 +1,35 @@
+@model WebsiteDatLichChuyenNha.Models.Booking
+
+@{
+    ViewData["Title"] = "Đặt Lịch Thành Công";
+}
+
+<div class="row justify-content-center text-center mt-5">
+    <div class="col-md-6">
+        <div class="card p-5 fade-in">
+            <div class="mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="#10B981" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                </svg>
+            </div>
+            <h2 class="text-success mb-3">✅ Đặt Lịch Thành Công!</h2>
+            <p class="text-muted mb-4">Cảm ơn <strong>@Model.CustomerName</strong> đã tin tưởng sử dụng dịch vụ của Nguyen Hoang Anh.</p>
+            
+            <div class="alert alert-info text-start">
+                <h5>📋 Thông Tin Đặt Lịch:</h5>
+                <p class="mb-1"><strong>Ngày chuyển:</strong> @Model.MoveDate.ToString("dd/MM/yyyy")</p>
+                <p class="mb-1"><strong>Từ:</strong> @Model.FromAddress</p>
+                <p class="mb-1"><strong>Đến:</strong> @Model.ToAddress</p>
+                <p class="mb-1"><strong>Khoảng cách:</strong> @Model.Distance km</p>
+                <p class="mb-0"><strong>Ước tính chi phí:</strong> @Model.EstimatedCost.ToString("N0") VNĐ</p>
+            </div>
+
+            <p class="text-muted">Nhân viên của chúng tôi sẽ liên hệ lại với bạn qua số điện thoại <strong>@Model.PhoneNumber</strong> trong thời gian sớm nhất để xác nhận.</p>
+            
+            <div class="d-flex gap-2 justify-content-center mt-4">
+                <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Về Trang Chủ</a>
+                <a asp-controller="Booking" asp-action="Track" class="btn btn-outline-primary">Tra Cứu Đơn</a>
+            </div>
+        </div>
+    </div>
+</div>
