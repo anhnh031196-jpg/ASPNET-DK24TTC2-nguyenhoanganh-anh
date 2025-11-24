@@ -17,117 +17,117 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebsiteDatLichChuyenNha
 build_property.RootNamespace = WebsiteDatLichChuyenNha
-build_property.ProjectDir = C:\Users\Kai\Downloads\WebsiteDatLichChuyenNha\
+build_property.ProjectDir = C:\Users\Kai\Documents\GitHub\ASPNET-DK24TTC2-nguyenhoanganh-anh\NguyenHoangAnh\WebsiteDatLichChuyenNha\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Kai\Downloads\WebsiteDatLichChuyenNha
+build_property.MSBuildProjectDirectory = C:\Users\Kai\Documents\GitHub\ASPNET-DK24TTC2-nguyenhoanganh-anh\NguyenHoangAnh\WebsiteDatLichChuyenNha
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Account/AccessDenied.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Account/ChangePassword.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Account/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Account/Login.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Account/Profile.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Account/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Account/Register.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Admin/BookingDetails.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Admin/BookingDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQm9va2luZ0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Admin/Bookings.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Admin/Bookings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQm9va2luZ3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Admin/Customers.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Admin/Customers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3VzdG9tZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Admin/Index.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Admin/Pricing.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Admin/Pricing.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJpY2luZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Admin/ReviewDetails.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Admin/ReviewDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmV2aWV3RGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Admin/Reviews.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Admin/Reviews.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmV2aWV3cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Booking/Create.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Booking/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Booking/History.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Booking/History.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xIaXN0b3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Booking/Success.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Booking/Success.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xTdWNjZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Booking/Track.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Booking/Track.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xUcmFjay5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Booking/TrackResult.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Booking/TrackResult.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xUcmFja1Jlc3VsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Home/Index.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Home/Privacy.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Review/Create.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Review/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Review/MyReviews.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Review/MyReviews.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XE15UmV2aWV3cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Shared/Error.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/_ViewImports.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/_ViewStart.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kai/Downloads/WebsiteDatLichChuyenNha/Views/Shared/_Layout.cshtml]
+[C:/Users/Kai/Documents/GitHub/ASPNET-DK24TTC2-nguyenhoanganh-anh/NguyenHoangAnh/WebsiteDatLichChuyenNha/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-6uwxio3kzz
