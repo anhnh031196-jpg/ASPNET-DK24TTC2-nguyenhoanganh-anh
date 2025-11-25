@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace WebsiteDatLichChuyenNha.ViewModels
+namespace WebsiteDichVuSuaNha.ViewModels
 {
     public class RegisterViewModel
     {

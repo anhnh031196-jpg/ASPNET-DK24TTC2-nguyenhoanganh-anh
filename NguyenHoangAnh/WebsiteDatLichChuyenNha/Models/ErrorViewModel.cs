@@ -1,4 +1,4 @@
-namespace WebsiteDatLichChuyenNha.Models;
+namespace WebsiteDichVuSuaNha.Models;
 
 public class ErrorViewModel
 {

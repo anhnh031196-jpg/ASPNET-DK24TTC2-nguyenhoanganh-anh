@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebsiteDatLichChuyenNha.Data;
-using WebsiteDatLichChuyenNha.Models;
+using WebsiteDichVuSuaNha.Data;
+using WebsiteDichVuSuaNha.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace WebsiteDatLichChuyenNha.Controllers
+namespace WebsiteDichVuSuaNha.Controllers
 {
     [Authorize(Roles = "Admin,Staff")]
     public class AdminController : Controller

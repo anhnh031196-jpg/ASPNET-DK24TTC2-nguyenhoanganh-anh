@@ -43,18 +43,18 @@
 | Thành phần | Công nghệ |
 |------------|-----------|
 | **Backend Framework** | ASP.NET Core 9.0 MVC |
-| **Database** | SQLite 3 |
+| **Database** | Microsoft SQL Server (LocalDB) |
 | **ORM** | Entity Framework Core 9.0 |
 | **Authentication** | ASP.NET Core Identity |
 | **Frontend** | HTML5, CSS3, JavaScript (Vanilla) |
 | **UI Framework** | Bootstrap 5.3 |
-| **Font** | Google Fonts - Outfit |
+| **Font** | Google Fonts - Inter (Vietnamese support) |
 | **Icons** | Unicode Emoji |
 
 ### 🎨 Thiết kế UI
 - **Màu chủ đạo**: Indigo `#4F46E5`
 - **Màu phụ**: Emerald Green `#10B981`
-- **Font chữ**: Outfit (Google Fonts)
+- **Font chữ**: Inter (Google Fonts với hỗ trợ tiếng Việt)
 - **Hiệu ứng**: Fade-in animations, smooth transitions, hover effects
 - **Responsive**: Tối ưu cho Desktop, Tablet và Mobile
 
@@ -63,7 +63,7 @@
 ## 📂 Cấu trúc dự án
 
 ```
-WebsiteDatLichChuyenNha/
+WebsiteDichVuSuaNha/
 │
 ├── Controllers/
 │   ├── HomeController.cs          # Trang chủ
@@ -101,7 +101,7 @@ WebsiteDatLichChuyenNha/
 │
 ├── Program.cs                     # Entry point, cấu hình services
 ├── appsettings.json              # Cấu hình ứng dụng
-└── movingservice.db              # SQLite database file
+└── (Database được quản lý bởi SQL Server LocalDB)
 ```
 
 ---
@@ -163,8 +163,8 @@ Kế thừa từ IdentityUser với các trường bổ sung:
 
 ### 2️⃣ Clone repository
 ```bash
-git clone https://github.com/your-username/WebsiteDatLichChuyenNha.git
-cd WebsiteDatLichChuyenNha
+git clone https://github.com/your-username/WebsiteDichVuSuaNha.git
+cd WebsiteDichVuSuaNha
 ```
 
 ### 3️⃣ Restore dependencies

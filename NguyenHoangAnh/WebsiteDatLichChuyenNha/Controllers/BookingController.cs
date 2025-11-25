@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using WebsiteDatLichChuyenNha.Data;
-using WebsiteDatLichChuyenNha.Models;
+using WebsiteDichVuSuaNha.Data;
+using WebsiteDichVuSuaNha.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace WebsiteDatLichChuyenNha.Controllers
+namespace WebsiteDichVuSuaNha.Controllers
 {
     public class BookingController : Controller
     {

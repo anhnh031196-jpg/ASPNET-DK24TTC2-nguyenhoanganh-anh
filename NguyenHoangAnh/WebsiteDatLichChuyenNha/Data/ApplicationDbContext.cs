@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using WebsiteDatLichChuyenNha.Models;
+using WebsiteDichVuSuaNha.Models;
 
-namespace WebsiteDatLichChuyenNha.Data
+namespace WebsiteDichVuSuaNha.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -18,6 +18,15 @@ namespace WebsiteDatLichChuyenNha.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            // Configure decimal precision for SQL Server
+            modelBuilder.Entity<Booking>()
+                .Property(b => b.EstimatedCost)
+                .HasPrecision(18, 2);
+
+            modelBuilder.Entity<PricingSetting>()
+                .Property(p => p.BaseServiceFee)
+                .HasPrecision(18, 2);
 
             // Configure Review relationships
             modelBuilder.Entity<Review>()
@@ -38,7 +47,7 @@ namespace WebsiteDatLichChuyenNha.Data
                 {
                     Id = 1,
                     BaseServiceFee = 200000,
-                    UpdatedAt = DateTime.Now
+                    UpdatedAt = new DateTime(2025, 11, 25, 0, 0, 0, DateTimeKind.Utc)
                 }
             );
         }

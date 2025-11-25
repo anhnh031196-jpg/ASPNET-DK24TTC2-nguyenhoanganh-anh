@@ -1,4 +1,4 @@
-@model List<WebsiteDatLichChuyenNha.Models.Booking>
+@model List<WebsiteDichVuSuaNha.Models.Booking>
 
 @{
     ViewData["Title"] = "Lịch Sử Đơn Hàng";
@@ -71,7 +71,7 @@
                                         <td>
                                             @if (booking.Status == "Hoàn thành")
                                             {
-                                                var hasReview = ViewContext.HttpContext.RequestServices.GetService<WebsiteDatLichChuyenNha.Data.ApplicationDbContext>()?.Reviews.Any(r => r.BookingId == booking.Id) ?? false;
+                                                var hasReview = ViewContext.HttpContext.RequestServices.GetService<WebsiteDichVuSuaNha.Data.ApplicationDbContext>()?.Reviews.Any(r => r.BookingId == booking.Id) ?? false;
                                                 if (!hasReview)
                                                 {
                                                     <a asp-controller="Review" asp-action="Create" asp-route-bookingId="@booking.Id" class="btn btn-sm btn-warning">⭐ Đánh Giá</a>

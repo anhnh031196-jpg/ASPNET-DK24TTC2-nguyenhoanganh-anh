@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
-using WebsiteDatLichChuyenNha.Data;
-using WebsiteDatLichChuyenNha.Models;
+using WebsiteDichVuSuaNha.Data;
+using WebsiteDichVuSuaNha.Models;
 
-namespace WebsiteDatLichChuyenNha.Controllers
+namespace WebsiteDichVuSuaNha.Controllers
 {
     public class HomeController : Controller
     {

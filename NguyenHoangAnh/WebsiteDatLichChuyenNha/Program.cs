@@ -1,7 +1,11 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using WebsiteDatLichChuyenNha.Data;
-using WebsiteDatLichChuyenNha.Models;
+using WebsiteDichVuSuaNha.Data;
+using WebsiteDichVuSuaNha.Models;
+using System.Text;
+
+// Register encoding provider for proper Vietnamese character support
+Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +14,7 @@ builder.Services.AddControllersWithViews();
 
 // Add DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add Identity
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>

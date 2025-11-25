@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace WebsiteDatLichChuyenNha.Models
+namespace WebsiteDichVuSuaNha.Models
 {
     public class PricingSetting
     {
