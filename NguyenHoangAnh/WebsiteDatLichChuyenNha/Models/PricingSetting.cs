@@ -7,11 +7,7 @@ namespace WebsiteDatLichChuyenNha.Models
         public int Id { get; set; }
 
         [Required]
-        [Display(Name = "Giá mỗi km (VNĐ)")]
-        public decimal PricePerKm { get; set; } = 15000;
-
-        [Required]
-        [Display(Name = "Phí dịch vụ cố định (VNĐ)")]
+        [Display(Name = "Phí dịch vụ cơ bản (VNĐ)")]
         public decimal BaseServiceFee { get; set; } = 200000;
 
         [Display(Name = "Ngày cập nhật")]

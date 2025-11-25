@@ -1,163 +1,314 @@
-# 🚚 **Website Đặt Lịch Chuyển Nhà - ANHNH DK24TTC2**
+# 🛠️ **Website Dịch Vụ Sửa Chữa Nhà Cửa - Nguyễn Hoàng Anh**
 
 ---
 
 ## 📖 Giới thiệu
 
-Website **ANHNH DK24TTC2** là một hệ thống đặt lịch chuyển nhà được xây dựng bằng **ASP.NET Core MVC**. Ứng dụng hỗ trợ cả **khách hàng** và **quản trị viên** với các chức năng đầy đủ: tạo đơn đặt lịch, tính phí tự động, tra cứu, quản lý trạng thái, đánh giá dịch vụ và phản hồi từ admin.
+**Nguyễn Hoàng Anh** là một hệ thống đặt lịch sửa chữa nhà cửa trực tuyến được xây dựng bằng **ASP.NET Core 9.0 MVC**. Ứng dụng kết nối khách hàng có nhu cầu sửa chữa (điện, nước, sơn sửa, chống thấm, v.v.) với đội ngũ thợ lành nghề, giúp quá trình đặt lịch và quản lý dịch vụ trở nên dễ dàng và hiệu quả.
+
+### 🎯 Mục tiêu dự án
+- Tạo nền tảng kết nối khách hàng với thợ sửa chữa chuyên nghiệp
+- Đơn giản hóa quy trình đặt lịch và quản lý đơn hàng
+- Xây dựng hệ thống đánh giá minh bạch để nâng cao chất lượng dịch vụ
+- Cung cấp công cụ quản trị toàn diện cho admin
 
 ---
 
 ## ✨ Tính năng nổi bật
 
-- **🗓️ Đặt lịch chuyển nhà** – nhập thông tin khách hàng, địa chỉ, khoảng cách và tự động tính **ước tính chi phí**.
-- **🔎 Tra cứu đơn hàng** – khách hàng có thể tra cứu lịch sử đơn bằng số điện thoại.
-- **📊 Dashboard admin** – thống kê tổng số đơn, trạng thái (Mới, Đang xử lý, Hoàn thành, Hủy).
-- **🛠️ Quản lý đơn hàng** – xem chi tiết, cập nhật trạng thái, ghi chú admin, phân công nhân viên.
-- **💰 Quản lý bảng giá** – thiết lập giá mỗi km và phí dịch vụ cố định.
-- **⭐ Hệ thống đánh giá** – khách hàng sau khi hoàn thành đơn có thể **đánh giá 1‑5 sao** và để lại nhận xét.
-- **🗨️ Phản hồi admin** – admin có thể trả lời đánh giá, bật/tắt hiển thị công khai.
-- **🔐 Bảo mật** – CSRF, anti‑forgery token, Identity authentication, role‑based authorization (Admin, Staff, Customer).
-- **📱 Responsive** – giao diện Bootstrap 5, tối ưu cho Desktop, Tablet và Mobile.
+### 👥 Dành cho Khách hàng
+- **🗓️ Đặt lịch sửa chữa** – Chọn loại dịch vụ, nhập địa chỉ và mô tả sự cố
+- **🔎 Tra cứu đơn hàng** – Tra cứu trạng thái đơn bằng số điện thoại
+- **📱 Lịch sử đơn hàng** – Xem tất cả đơn đã đặt (yêu cầu đăng nhập)
+- **⭐ Đánh giá dịch vụ** – Đánh giá 1-5 sao và để lại nhận xét sau khi hoàn thành
+- **👤 Quản lý tài khoản** – Đăng ký, đăng nhập, cập nhật thông tin cá nhân
+
+### 🔧 Dành cho Admin/Staff
+- **📊 Dashboard thống kê** – Tổng quan số liệu: tổng đơn, đơn mới, đang xử lý, hoàn thành
+- **🛠️ Quản lý đơn hàng** – Xem chi tiết, cập nhật trạng thái, phân công thợ, ghi chú
+- **👥 Quản lý khách hàng** – Xem danh sách khách hàng và lịch sử đặt lịch
+- **💰 Quản lý bảng giá** – Thiết lập phí dịch vụ cơ bản
+- **⭐ Quản lý đánh giá** – Xem, phản hồi, ẩn/hiện đánh giá công khai
+
+### 🔐 Bảo mật & Phân quyền
+- **ASP.NET Core Identity** – Xác thực và phân quyền người dùng
+- **3 vai trò**: Admin, Staff, Customer
+- **CSRF Protection** – Anti-forgery token cho tất cả form
+- **Role-based Authorization** – Phân quyền truy cập theo vai trò
 
 ---
 
 ## 🛠️ Công nghệ sử dụng
 
-| Layer | Technology |
-|-------|------------|
-| **Backend** | ASP.NET Core 9.0 MVC |
-| **Database** | SQLite + Entity Framework Core |
-| **Frontend** | HTML5, CSS3, JavaScript, Bootstrap 5 |
-| **Identity** | ASP.NET Core Identity (ApplicationUser) |
-| **Styling** | Modern, premium UI – màu chủ đạo Indigo (`#4F46E5`), phụ Emerald Green (`#10B981`). |
+| Thành phần | Công nghệ |
+|------------|-----------|
+| **Backend Framework** | ASP.NET Core 9.0 MVC |
+| **Database** | SQLite 3 |
+| **ORM** | Entity Framework Core 9.0 |
+| **Authentication** | ASP.NET Core Identity |
+| **Frontend** | HTML5, CSS3, JavaScript (Vanilla) |
+| **UI Framework** | Bootstrap 5.3 |
+| **Font** | Google Fonts - Outfit |
+| **Icons** | Unicode Emoji |
 
----
-
-## 📂 Cấu trúc dự án (các thư mục quan trọng)
-
-```
-Controllers/
-│   ├─ AdminController.cs      // Dashboard & quản lý (đơn, khách, bảng giá, review)
-│   ├─ BookingController.cs    // Đặt lịch, tính phí, tra cứu, lịch sử
-│   ├─ ReviewController.cs     // Tạo, xem, phản hồi review
-│   └─ HomeController.cs       // Trang chủ
-
-Models/
-│   ├─ Booking.cs              // Đơn đặt lịch
-│   ├─ Review.cs               // Đánh giá
-│   ├─ PricingSetting.cs       // Bảng giá
-│   └─ ApplicationUser.cs      // Identity user
-
-Data/
-│   └─ ApplicationDbContext.cs // EF Core DbContext + seed dữ liệu
-
-ViewModels/
-│   ├─ CreateReviewViewModel.cs // Dữ liệu tạo review
-│   └─ ...
-
-Views/
-│   ├─ Admin/…                // Razor views cho admin
-│   ├─ Booking/…              // Razor views cho khách
-│   ├─ Review/…               // Razor views cho review
-│   └─ Home/…                 // Trang chủ
-```
-
----
-
-## 🚀 Hướng dẫn chạy ứng dụng
-
-### 1️⃣ Yêu cầu môi trường
-- **.NET 9.0 SDK** (hoặc mới hơn)
-- **SQLite** (được tích hợp trong .NET, không cần cài đặt riêng)
-- **Git** (để clone repo)
-
-### 2️⃣ Clone và khởi chạy
-```bash
-# Clone repo
-git clone https://github.com/your-repo/WebsiteDatLichChuyenNha.git
-cd WebsiteDatLichChuyenNha
-
-# Restore packages & build
-dotnet restore
-dotnet build
-
-# Chạy ứng dụng
-dotnet run --project WebsiteDatLichChuyenNha
-```
-
-Mặc định ứng dụng sẽ lắng nghe tại **http://localhost:5216**. Mở trình duyệt và truy cập để xem giao diện.
-
-### 3️⃣ Tạo tài khoản admin (đầu tiên)
-1. Đăng ký tài khoản thường tại `/Account/Register`.
-2. Mở **SQL Server Explorer** hoặc dùng **SQLite Browser** để cập nhật trường `AspNetRoles` và `AspNetUserRoles` – gán role `Admin` cho tài khoản vừa tạo.
-3. Đăng nhập lại, bạn sẽ thấy các menu admin xuất hiện.
-
----
-
-## 📋 API & Route chính
-| Route | Method | Description |
-|-------|--------|-------------|
-| `/Booking/Create` | GET/POST | Tạo đơn đặt lịch, tính phí tự động |
-| `/Booking/Success/{id}` | GET | Trang hiển thị thông tin đơn đã đặt thành công |
-| `/Booking/Track` | GET/POST | Tra cứu lịch sử đơn bằng số điện thoại |
-| `/Booking/History` | GET (Auth) | Xem lịch sử đơn của người dùng hiện tại |
-| `/Review/Create/{bookingId}` | GET/POST (Auth) | Tạo đánh giá cho đơn đã hoàn thành |
-| `/Review/MyReviews` | GET (Auth) | Danh sách đánh giá của người dùng |
-| `/Admin/Index` | GET (Admin) | Dashboard thống kê |
-| `/Admin/Bookings` | GET (Admin) | Quản lý toàn bộ đơn |
-| `/Admin/BookingDetails/{id}` | GET (Admin) | Xem chi tiết đơn và cập nhật trạng thái |
-| `/Admin/Pricing` | GET/POST (Admin) | Thiết lập bảng giá |
-| `/Admin/Reviews` | GET (Admin) | Quản lý các đánh giá |
-| `/Admin/ReplyReview` | POST (Admin) | Phản hồi admin cho đánh giá |
-| `/Admin/ToggleReviewVisibility` | POST (Admin) | Ẩn/hiện đánh giá công khai |
-
----
-
-## 🗂️ Database schema (SQLite)
-
-| Table | Columns |
-|-------|---------|
-| **Bookings** | `Id`, `CustomerName`, `PhoneNumber`, `MoveDate`, `FromAddress`, `ToAddress`, `Distance`, `EstimatedCost`, `Notes`, `AdminNotes`, `Status`, `CreatedAt`, `UserId` |
-| **PricingSettings** | `Id`, `PricePerKm`, `BaseServiceFee`, `UpdatedAt` |
-| **Reviews** | `Id`, `BookingId`, `UserId`, `Rating`, `Comment`, `AdminReply`, `CreatedAt`, `RepliedAt`, `IsPublic` |
-| **AspNetUsers** (Identity) | `Id`, `UserName`, `Email`, `FullName`, `PhoneNumber`, … |
-| **AspNetRoles**, **AspNetUserRoles**, … | Identity tables |
-
----
-
-## 🎨 Thiết kế UI
-- **Font**: `Outfit` (Google Fonts)
+### 🎨 Thiết kế UI
 - **Màu chủ đạo**: Indigo `#4F46E5`
 - **Màu phụ**: Emerald Green `#10B981`
-- **Hiệu ứng**: fade‑in, hover transition, button ripple
-- **Responsive**: sử dụng Grid & Flex của Bootstrap 5 để tự động điều chỉnh layout.
+- **Font chữ**: Outfit (Google Fonts)
+- **Hiệu ứng**: Fade-in animations, smooth transitions, hover effects
+- **Responsive**: Tối ưu cho Desktop, Tablet và Mobile
 
 ---
 
-## 📦 Deploy (tùy chọn)
-```bash
-# Publish cho môi trường production
-dotnet publish -c Release -o ./publish
-# Sau đó copy thư mục publish lên server IIS / Nginx (reverse‑proxy) và cấu hình ASP.NET Core Module.
+## 📂 Cấu trúc dự án
+
+```
+WebsiteDatLichChuyenNha/
+│
+├── Controllers/
+│   ├── HomeController.cs          # Trang chủ
+│   ├── BookingController.cs       # Đặt lịch, tra cứu, lịch sử
+│   ├── ReviewController.cs        # Tạo và xem đánh giá
+│   ├── AdminController.cs         # Quản trị (dashboard, đơn hàng, khách hàng, bảng giá, đánh giá)
+│   └── AccountController.cs       # Đăng ký, đăng nhập, quản lý tài khoản
+│
+├── Models/
+│   ├── Booking.cs                 # Model đơn đặt lịch
+│   ├── Review.cs                  # Model đánh giá
+│   ├── PricingSetting.cs          # Model bảng giá
+│   └── ApplicationUser.cs         # Model người dùng (kế thừa IdentityUser)
+│
+├── ViewModels/
+│   ├── CreateReviewViewModel.cs   # ViewModel tạo đánh giá
+│   ├── LoginViewModel.cs          # ViewModel đăng nhập
+│   └── RegisterViewModel.cs       # ViewModel đăng ký
+│
+├── Data/
+│   └── ApplicationDbContext.cs    # EF Core DbContext + seed data
+│
+├── Views/
+│   ├── Home/                      # Views trang chủ
+│   ├── Booking/                   # Views đặt lịch
+│   ├── Review/                    # Views đánh giá
+│   ├── Admin/                     # Views quản trị
+│   ├── Account/                   # Views tài khoản
+│   └── Shared/                    # Layout và partial views
+│
+├── wwwroot/
+│   ├── css/                       # CSS files
+│   ├── js/                        # JavaScript files
+│   └── lib/                       # Bootstrap, jQuery
+│
+├── Program.cs                     # Entry point, cấu hình services
+├── appsettings.json              # Cấu hình ứng dụng
+└── movingservice.db              # SQLite database file
 ```
 
 ---
 
-## 📝 Ghi chú & Roadmap
-- **[✔]** Đã triển khai hệ thống **đánh giá & phản hồi**.
-- **[✔]** Bảng giá có thể chỉnh sửa trực tiếp từ admin.
-- **[ ]** Thêm **payment gateway** để khách hàng thanh toán online.
-- **[ ]]** Tích hợp **email notification** khi đơn chuyển sang trạng thái mới.
-- **[ ]** Thêm **đánh giá bằng hình ảnh** và **gallery** cho admin.
+## 🗂️ Database Schema
+
+### Bảng chính
+
+#### **Bookings** (Đơn đặt lịch)
+| Cột | Kiểu | Mô tả |
+|-----|------|-------|
+| Id | int | Primary key |
+| CustomerName | string | Tên khách hàng |
+| PhoneNumber | string | Số điện thoại |
+| ServiceDate | DateTime | Ngày hẹn sửa chữa |
+| Address | string | Địa chỉ sửa chữa |
+| ServiceType | string | Loại dịch vụ (Điện/Nước/Sơn/Tổng hợp) |
+| EstimatedCost | decimal | Ước tính chi phí |
+| Notes | string | Ghi chú khách hàng |
+| AdminNotes | string | Ghi chú admin |
+| Status | string | Trạng thái (Mới/Đã xác nhận/Đang xử lý/Hoàn thành/Hủy) |
+| CreatedAt | DateTime | Ngày tạo |
+| UserId | string | Foreign key đến AspNetUsers |
+
+#### **Reviews** (Đánh giá)
+| Cột | Kiểu | Mô tả |
+|-----|------|-------|
+| Id | int | Primary key |
+| BookingId | int | Foreign key đến Bookings |
+| UserId | string | Foreign key đến AspNetUsers |
+| Rating | int | Số sao (1-5) |
+| Comment | string | Nội dung đánh giá |
+| AdminReply | string | Phản hồi từ admin |
+| CreatedAt | DateTime | Ngày tạo |
+| RepliedAt | DateTime | Ngày admin phản hồi |
+| IsPublic | bool | Hiển thị công khai hay không |
+
+#### **PricingSettings** (Bảng giá)
+| Cột | Kiểu | Mô tả |
+|-----|------|-------|
+| Id | int | Primary key |
+| BaseServiceFee | decimal | Phí dịch vụ cơ bản |
+| UpdatedAt | DateTime | Ngày cập nhật |
+
+#### **AspNetUsers** (Người dùng - Identity)
+Kế thừa từ IdentityUser với các trường bổ sung:
+- FullName (string)
+- CreatedAt (DateTime)
+- LastLoginAt (DateTime)
+
+---
+
+## 🚀 Hướng dẫn cài đặt và chạy
+
+### 1️⃣ Yêu cầu hệ thống
+- **.NET 9.0 SDK** hoặc mới hơn
+- **Visual Studio 2022** hoặc **VS Code** (tùy chọn)
+- **Git** (để clone repository)
+
+### 2️⃣ Clone repository
+```bash
+git clone https://github.com/your-username/WebsiteDatLichChuyenNha.git
+cd WebsiteDatLichChuyenNha
+```
+
+### 3️⃣ Restore dependencies
+```bash
+dotnet restore
+```
+
+### 4️⃣ Build project
+```bash
+dotnet build
+```
+
+### 5️⃣ Chạy ứng dụng
+```bash
+dotnet run
+```
+
+Ứng dụng sẽ chạy tại: **http://localhost:5216**
+
+### 6️⃣ Dữ liệu mẫu (Demo Data)
+Khi chạy lần đầu, hệ thống sẽ tự động tạo:
+- **1 tài khoản Admin**: 
+  - Email: `admin@suachuanha.vn`
+  - Password: `Admin@123`
+- **2 tài khoản Customer** để demo
+- **5 đơn đặt lịch mẫu** với các trạng thái khác nhau
+- **2 đánh giá mẫu** cho các đơn đã hoàn thành
+
+---
+
+## 📋 API Routes & Endpoints
+
+### 🏠 Public Routes
+| Route | Method | Mô tả |
+|-------|--------|-------|
+| `/` | GET | Trang chủ |
+| `/Booking/Create` | GET/POST | Tạo đơn đặt lịch |
+| `/Booking/Success/{id}` | GET | Trang xác nhận đặt lịch thành công |
+| `/Booking/Track` | GET/POST | Tra cứu đơn hàng bằng SĐT |
+| `/Account/Login` | GET/POST | Đăng nhập |
+| `/Account/Register` | GET/POST | Đăng ký tài khoản |
+
+### 🔒 Authenticated Routes
+| Route | Method | Role | Mô tả |
+|-------|--------|------|-------|
+| `/Booking/History` | GET | Customer | Lịch sử đơn hàng |
+| `/Review/Create/{bookingId}` | GET/POST | Customer | Tạo đánh giá |
+| `/Review/MyReviews` | GET | Customer | Đánh giá của tôi |
+| `/Account/Profile` | GET/POST | All | Thông tin cá nhân |
+
+### 👨‍💼 Admin Routes
+| Route | Method | Mô tả |
+|-------|--------|-------|
+| `/Admin/Index` | GET | Dashboard thống kê |
+| `/Admin/Bookings` | GET | Danh sách tất cả đơn hàng |
+| `/Admin/BookingDetails/{id}` | GET | Chi tiết đơn hàng |
+| `/Admin/UpdateStatus` | POST | Cập nhật trạng thái đơn |
+| `/Admin/Customers` | GET | Danh sách khách hàng |
+| `/Admin/Pricing` | GET/POST | Quản lý bảng giá |
+| `/Admin/Reviews` | GET | Danh sách đánh giá |
+| `/Admin/ReviewDetails/{id}` | GET | Chi tiết đánh giá |
+| `/Admin/ReplyReview` | POST | Phản hồi đánh giá |
+| `/Admin/ToggleReviewVisibility` | POST | Ẩn/hiện đánh giá |
+
+---
+
+## 🎯 Use Cases
+
+### Use Case 1: Khách hàng đặt lịch sửa chữa
+1. Khách truy cập trang chủ
+2. Click "Đặt Lịch Sửa Chữa"
+3. Điền form: Họ tên, SĐT, Ngày hẹn, Địa chỉ, Loại dịch vụ, Mô tả sự cố
+4. Xem phí dịch vụ cơ bản
+5. Xác nhận đặt lịch
+6. Nhận thông báo thành công với mã đơn hàng
+
+### Use Case 2: Khách hàng tra cứu đơn
+1. Click "Tra Cứu"
+2. Nhập số điện thoại
+3. Xem danh sách đơn hàng và trạng thái
+
+### Use Case 3: Admin quản lý đơn hàng
+1. Đăng nhập với tài khoản admin
+2. Vào Dashboard xem tổng quan
+3. Click "Quản Lý Đơn Hàng"
+4. Chọn đơn cần xử lý
+5. Cập nhật trạng thái, ghi chú, phân công thợ
+6. Lưu thay đổi
+
+### Use Case 4: Khách hàng đánh giá dịch vụ
+1. Đăng nhập
+2. Vào "Lịch Sử Đơn Hàng"
+3. Chọn đơn đã hoàn thành
+4. Click "Đánh Giá"
+5. Chọn số sao và viết nhận xét
+6. Gửi đánh giá
+
+---
+
+## 📝 Ghi chú quan trọng
+
+### ⚠️ Lưu ý bảo mật
+- Đổi mật khẩu admin mặc định sau khi deploy
+- Cấu hình HTTPS cho production
+- Bảo vệ connection string trong production
+- Sử dụng secrets manager cho thông tin nhạy cảm
+
+### 🔄 Roadmap tương lai
+- [ ] Tích hợp thanh toán online (VNPay, MoMo)
+- [ ] Gửi email/SMS thông báo khi đơn thay đổi trạng thái
+- [ ] Upload hình ảnh sự cố khi đặt lịch
+- [ ] Hệ thống chat trực tiếp với thợ
+- [ ] Ứng dụng mobile (Flutter/React Native)
+- [ ] Tích hợp Google Maps để tính khoảng cách
+- [ ] Hệ thống báo cáo và thống kê nâng cao
 
 ---
 
 ## 👥 Đóng góp
-Mọi đóng góp đều được hoan nghênh! Hãy fork repo, tạo pull request và mô tả chi tiết thay đổi.
+
+Mọi đóng góp đều được hoan nghênh! Vui lòng:
+1. Fork repository
+2. Tạo branch mới (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Tạo Pull Request
 
 ---
 
-**Phát triển bởi:** ANHNH DK24TTC2*  
-**Ngày tạo:** 21/11/2025  
-**Phiên bản hiện tại:** `v1.2.0`
+## 📄 License
+
+Dự án này được phát triển cho mục đích học tập và demo.
+
+---
+
+## 📞 Liên hệ
+
+**Sinh viên**: Nguyễn Hoàng Anh  
+**Lớp**: DK24TTC2  
+**Ngày tạo**: 25/11/2025  
+**Phiên bản**: v2.0.0
+
+---
+
+## 🙏 Cảm ơn
+
+Cảm ơn đã quan tâm đến dự án! Nếu bạn thấy hữu ích, hãy cho một ⭐ trên GitHub!

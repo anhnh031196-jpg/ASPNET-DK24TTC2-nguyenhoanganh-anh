@@ -30,8 +30,8 @@
 
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <strong>Ngày Chuyển:</strong>
-                            <p>@Model.MoveDate.ToString("dd/MM/yyyy")</p>
+                            <strong>Ngày Sửa Chữa:</strong>
+                            <p>@Model.ServiceDate.ToString("dd/MM/yyyy")</p>
                         </div>
                         <div class="col-md-6">
                             <strong>Ngày Tạo:</strong>
@@ -40,19 +40,14 @@
                     </div>
 
                     <div class="mb-3">
-                        <strong>Địa Chỉ Đi:</strong>
-                        <p>@Model.FromAddress</p>
-                    </div>
-
-                    <div class="mb-3">
-                        <strong>Địa Chỉ Đến:</strong>
-                        <p>@Model.ToAddress</p>
+                        <strong>Địa Chỉ:</strong>
+                        <p>@Model.Address</p>
                     </div>
 
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <strong>Khoảng Cách:</strong>
-                            <p>@Model.Distance km</p>
+                            <strong>Loại Dịch Vụ:</strong>
+                            <p>@Model.ServiceType</p>
                         </div>
                         <div class="col-md-6">
                             <strong>Ước Tính Chi Phí:</strong>

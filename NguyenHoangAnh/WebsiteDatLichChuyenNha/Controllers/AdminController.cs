@@ -97,7 +97,6 @@ namespace WebsiteDatLichChuyenNha.Controllers
             {
                 pricing = new PricingSetting
                 {
-                    PricePerKm = 15000,
                     BaseServiceFee = 200000
                 };
             }
@@ -119,7 +118,6 @@ namespace WebsiteDatLichChuyenNha.Controllers
                 }
                 else
                 {
-                    pricing.PricePerKm = model.PricePerKm;
                     pricing.BaseServiceFee = model.BaseServiceFee;
                     pricing.UpdatedAt = DateTime.Now;
                 }

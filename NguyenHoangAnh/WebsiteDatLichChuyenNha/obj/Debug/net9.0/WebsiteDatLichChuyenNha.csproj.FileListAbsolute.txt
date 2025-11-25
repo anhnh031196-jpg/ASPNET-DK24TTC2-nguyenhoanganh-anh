@@ -415,10 +415,10 @@ C:\Users\Kai\Documents\GitHub\ASPNET-DK24TTC2-nguyenhoanganh-anh\NguyenHoangAnh\
 C:\Users\Kai\Documents\GitHub\ASPNET-DK24TTC2-nguyenhoanganh-anh\NguyenHoangAnh\WebsiteDatLichChuyenNha\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\Kai\Documents\GitHub\ASPNET-DK24TTC2-nguyenhoanganh-anh\NguyenHoangAnh\WebsiteDatLichChuyenNha\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\Kai\Documents\GitHub\ASPNET-DK24TTC2-nguyenhoanganh-anh\NguyenHoangAnh\WebsiteDatLichChuyenNha\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-C:\Users\Kai\Documents\GitHub\ASPNET-DK24TTC2-nguyenhoanganh-anh\NguyenHoangAnh\WebsiteDatLichChuyenNha\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\Kai\Documents\GitHub\ASPNET-DK24TTC2-nguyenhoanganh-anh\NguyenHoangAnh\WebsiteDatLichChuyenNha\obj\Debug\net9.0\WebsiteD.DA052F89.Up2Date
 C:\Users\Kai\Documents\GitHub\ASPNET-DK24TTC2-nguyenhoanganh-anh\NguyenHoangAnh\WebsiteDatLichChuyenNha\obj\Debug\net9.0\WebsiteDatLichChuyenNha.dll
 C:\Users\Kai\Documents\GitHub\ASPNET-DK24TTC2-nguyenhoanganh-anh\NguyenHoangAnh\WebsiteDatLichChuyenNha\obj\Debug\net9.0\refint\WebsiteDatLichChuyenNha.dll
 C:\Users\Kai\Documents\GitHub\ASPNET-DK24TTC2-nguyenhoanganh-anh\NguyenHoangAnh\WebsiteDatLichChuyenNha\obj\Debug\net9.0\WebsiteDatLichChuyenNha.pdb
 C:\Users\Kai\Documents\GitHub\ASPNET-DK24TTC2-nguyenhoanganh-anh\NguyenHoangAnh\WebsiteDatLichChuyenNha\obj\Debug\net9.0\WebsiteDatLichChuyenNha.genruntimeconfig.cache
 C:\Users\Kai\Documents\GitHub\ASPNET-DK24TTC2-nguyenhoanganh-anh\NguyenHoangAnh\WebsiteDatLichChuyenNha\obj\Debug\net9.0\ref\WebsiteDatLichChuyenNha.dll
+C:\Users\Kai\Documents\GitHub\ASPNET-DK24TTC2-nguyenhoanganh-anh\NguyenHoangAnh\WebsiteDatLichChuyenNha\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

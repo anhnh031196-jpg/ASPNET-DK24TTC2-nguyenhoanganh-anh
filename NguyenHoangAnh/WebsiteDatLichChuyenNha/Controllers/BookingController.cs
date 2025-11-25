@@ -23,7 +23,6 @@ namespace WebsiteDatLichChuyenNha.Controllers
         public async Task<IActionResult> Create()
         {
             var pricing = await _context.PricingSettings.FirstOrDefaultAsync();
-            ViewBag.PricePerKm = pricing?.PricePerKm ?? 15000;
             ViewBag.BaseServiceFee = pricing?.BaseServiceFee ?? 200000;
             return View();
         }
@@ -35,11 +34,11 @@ namespace WebsiteDatLichChuyenNha.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Calculate estimated cost
+                // Calculate estimated cost (For now, just base fee)
                 var pricing = await _context.PricingSettings.FirstOrDefaultAsync();
                 if (pricing != null)
                 {
-                    booking.EstimatedCost = (decimal)booking.Distance * pricing.PricePerKm + pricing.BaseServiceFee;
+                    booking.EstimatedCost = pricing.BaseServiceFee;
                 }
 
                 booking.CreatedAt = DateTime.Now;
@@ -64,7 +63,6 @@ namespace WebsiteDatLichChuyenNha.Controllers
             }
 
             var pricingData = await _context.PricingSettings.FirstOrDefaultAsync();
-            ViewBag.PricePerKm = pricingData?.PricePerKm ?? 15000;
             ViewBag.BaseServiceFee = pricingData?.BaseServiceFee ?? 200000;
             return View(booking);
         }

@@ -27,10 +27,9 @@
                             <thead>
                                 <tr>
                                     <th>Mã Đơn</th>
-                                    <th>Ngày Chuyển</th>
-                                    <th>Từ</th>
-                                    <th>Đến</th>
-                                    <th>Khoảng Cách</th>
+                                    <th>Ngày Sửa</th>
+                                    <th>Địa Chỉ</th>
+                                    <th>Dịch Vụ</th>
                                     <th>Chi Phí</th>
                                     <th>Trạng Thái</th>
                                     <th>Ngày Tạo</th>
@@ -42,10 +41,9 @@
                                 {
                                     <tr>
                                         <td><strong>#@booking.Id</strong></td>
-                                        <td>@booking.MoveDate.ToString("dd/MM/yyyy")</td>
-                                        <td>@booking.FromAddress</td>
-                                        <td>@booking.ToAddress</td>
-                                        <td>@booking.Distance km</td>
+                                        <td>@booking.ServiceDate.ToString("dd/MM/yyyy")</td>
+                                        <td>@booking.Address</td>
+                                        <td>@booking.ServiceType</td>
                                         <td>@booking.EstimatedCost.ToString("N0") VNĐ</td>
                                         <td>
                                             @if (booking.Status == "Mới")

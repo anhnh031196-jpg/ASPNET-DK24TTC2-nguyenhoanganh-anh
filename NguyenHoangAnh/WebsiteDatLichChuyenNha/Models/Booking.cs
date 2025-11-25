@@ -16,26 +16,23 @@ namespace WebsiteDatLichChuyenNha.Models
         [Display(Name = "Số Điện Thoại")]
         public string PhoneNumber { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Vui lòng chọn ngày chuyển")]
+        [Required(ErrorMessage = "Vui lòng chọn ngày sửa chữa")]
         [DataType(DataType.Date)]
-        [Display(Name = "Ngày Chuyển")]
-        public DateTime MoveDate { get; set; }
+        [Display(Name = "Ngày Sửa Chữa")]
+        public DateTime ServiceDate { get; set; }
 
-        [Required(ErrorMessage = "Vui lòng nhập địa chỉ đi")]
-        [Display(Name = "Địa Chỉ Đi")]
-        public string FromAddress { get; set; } = string.Empty;
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ")]
+        [Display(Name = "Địa Chỉ")]
+        public string Address { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Vui lòng nhập địa chỉ đến")]
-        [Display(Name = "Địa Chỉ Đến")]
-        public string ToAddress { get; set; } = string.Empty;
-
-        [Display(Name = "Khoảng Cách (km)")]
-        public double Distance { get; set; }
+        [Required(ErrorMessage = "Vui lòng chọn loại dịch vụ")]
+        [Display(Name = "Loại Dịch Vụ")]
+        public string ServiceType { get; set; } = string.Empty;
 
         [Display(Name = "Ước Tính Chi Phí")]
         public decimal EstimatedCost { get; set; }
 
-        [Display(Name = "Ghi Chú")]
+        [Display(Name = "Mô Tả Sự Cố / Ghi Chú")]
         public string? Notes { get; set; }
 
         [Display(Name = "Ghi Chú Admin")]

@@ -29,28 +29,18 @@
                         <input type="hidden" asp-for="Id" />
 
                         <div class="mb-4">
-                            <label asp-for="PricePerKm" class="form-label"></label>
-                            <div class="input-group">
-                                <input asp-for="PricePerKm" class="form-control" type="number" step="1000" required />
-                                <span class="input-group-text">VNĐ/km</span>
-                            </div>
-                            <span asp-validation-for="PricePerKm" class="text-danger"></span>
-                            <small class="text-muted">Giá mỗi km sẽ được nhân với khoảng cách để tính chi phí vận chuyển</small>
-                        </div>
-
-                        <div class="mb-4">
                             <label asp-for="BaseServiceFee" class="form-label"></label>
                             <div class="input-group">
                                 <input asp-for="BaseServiceFee" class="form-control" type="number" step="10000" required />
                                 <span class="input-group-text">VNĐ</span>
                             </div>
                             <span asp-validation-for="BaseServiceFee" class="text-danger"></span>
-                            <small class="text-muted">Phí dịch vụ cố định cho mỗi đơn hàng</small>
+                            <small class="text-muted">Phí khảo sát và sửa chữa cơ bản. Chi phí thực tế sẽ được báo sau khi thợ kiểm tra.</small>
                         </div>
 
                         <div class="alert alert-info">
-                            <strong>📊 Công Thức Tính Giá:</strong>
-                            <p class="mb-0">Tổng Chi Phí = (Khoảng Cách × Giá/km) + Phí Dịch Vụ Cố Định</p>
+                            <strong>📊 Lưu Ý:</strong>
+                            <p class="mb-0">Đây là phí cơ bản cho mỗi đơn. Chi phí cuối cùng sẽ được thợ báo giá chi tiết tại hiện trường.</p>
                         </div>
 
                         <div class="d-grid gap-2">

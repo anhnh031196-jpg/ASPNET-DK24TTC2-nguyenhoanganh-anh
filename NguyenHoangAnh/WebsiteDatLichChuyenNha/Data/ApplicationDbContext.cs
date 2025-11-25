@@ -37,7 +37,6 @@ namespace WebsiteDatLichChuyenNha.Data
                 new PricingSetting
                 {
                     Id = 1,
-                    PricePerKm = 15000,
                     BaseServiceFee = 200000,
                     UpdatedAt = DateTime.Now
                 }
