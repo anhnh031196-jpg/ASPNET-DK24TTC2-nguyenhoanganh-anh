@@ -1,0 +1,275 @@
+﻿@{
+    ViewData["Title"] = "Trang Chủ";
+}
+
+@using Microsoft.EntityFrameworkCore
+@using WebsiteDichVuSuaNha.Data
+@inject ApplicationDbContext DbContext
+
+@{
+    // Get top reviews
+    var topReviews = await DbContext.Reviews
+        .Include(r => r.User)
+        .Include(r => r.Booking)
+        .Where(r => r.IsPublic)
+        .OrderByDescending(r => r.Rating)
+        .ThenByDescending(r => r.CreatedAt)
+        .Take(3)
+        .ToListAsync();
+}
+
+<div class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title">Dịch Vụ Sửa Chữa Nhà Cửa Chuyên Nghiệp</h1>
+        <p class="hero-subtitle">Giải pháp sửa chữa Điện - Nước - Sơn sửa - Nhanh chóng - Uy tín - Giá cả hợp lý</p>
+        <div class="hero-buttons">
+            <a asp-controller="Booking" asp-action="Create" class="btn btn-primary btn-lg">Đặt Lịch Sửa Chữa</a>
+            <a asp-controller="Booking" asp-action="Track" class="btn btn-outline-light btn-lg">Tra Cứu Đơn Hàng</a>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row text-center mb-5">
+        <div class="col-md-4 mb-4">
+            <div class="service-card">
+                <div class="service-icon">🔌</div>
+                <h3>Sửa Chữa Điện Nước</h3>
+                <p>Khắc phục mọi sự cố về điện, nước. Xử lý rò rỉ nước, thay thế ống nước, lắp đặt thiết bị điện nước nhanh chóng, an toàn và đảm bảo chất lượng.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Sơn Sửa & Chống Thấm</h3>
+                <p>Dịch vụ sơn nhà chuyên nghiệp, xử lý thấm dột tường, mái. Công nghệ chống thấm hiện đại, bảo hành dài hạn, mang lại không gian sống hoàn hảo.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="service-card">
+                <div class="service-icon">🛠️</div>
+                <h3>Sửa Chữa Tổng Hợp</h3>
+                <p>Sửa chữa cửa, thay khóa, lắp đặt thiết bị gia dụng và các công việc sửa chữa nhà cửa khác. Đội ngũ thợ giàu kinh nghiệm, tận tâm.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="why-choose-section">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=400&fit=crop" alt="Thợ sửa chữa chuyên nghiệp" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-md-6">
+                <h2 class="section-title">Tại Sao Chọn Nguyễn Hoàng Anh?</h2>
+                <ul class="feature-list">
+                    <li>✅ Đội ngũ thợ tay nghề cao, lý lịch rõ ràng, được đào tạo bài bản</li>
+                    <li>✅ Có mặt tại nhà bạn sau 30 phút kể từ khi gọi điện</li>
+                    <li>✅ Bảo hành dịch vụ dài hạn lên đến 12 tháng</li>
+                    <li>✅ Báo giá minh bạch, rõ ràng trước khi thực hiện công việc</li>
+                    <li>✅ Hỗ trợ khách hàng 24/7, làm việc cả cuối tuần và ngày lễ</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    @if (topReviews.Any())
+    {
+        <div class="reviews-section mt-5">
+            <h2 class="section-title text-center mb-4">Khách Hàng Nói Gì Về Chúng Tôi</h2>
+            <div class="row">
+                @foreach (var review in topReviews)
+                {
+                    <div class="col-md-4 mb-4">
+                        <div class="review-card">
+                            <div class="review-rating">
+                                @for (int i = 0; i < review.Rating; i++)
+                                {
+                                    <span class="star">⭐</span>
+                                }
+                            </div>
+                            <p class="review-comment">"@review.Comment"</p>
+                            <div class="review-author">
+                                <strong>@review.User?.FullName</strong>
+                                <br />
+                                <small class="text-muted">@review.Booking?.ServiceType - @review.CreatedAt.ToString("dd/MM/yyyy")</small>
+                            </div>
+                            @if (!string.IsNullOrEmpty(review.AdminReply))
+                            {
+                                <div class="admin-reply mt-3">
+                                    <strong>Phản hồi từ Nguyễn Hoàng Anh:</strong>
+                                    <p class="mb-0">@review.AdminReply</p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+
+    <div class="cta-section text-center mt-5 mb-5">
+        <h2>Cần Sửa Chữa Gấp?</h2>
+        <p class="lead">Liên hệ ngay để được tư vấn và báo giá miễn phí! Chúng tôi luôn sẵn sàng hỗ trợ bạn 24/7.</p>
+        <a asp-controller="Booking" asp-action="Create" class="btn btn-primary btn-lg">Đặt Lịch Ngay</a>
+    </div>
+</div>
+
+<style>
+    .hero-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 100px 0;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        opacity: 0.95;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .service-card {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    .service-icon {
+        font-size: 4rem;
+        margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+        color: #667eea;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .why-choose-section {
+        background: #f8f9fa;
+        padding: 60px 40px;
+        border-radius: 15px;
+        margin: 50px 0;
+    }
+
+    .section-title {
+        color: #333;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+
+    .feature-list {
+        list-style: none;
+        padding: 0;
+        font-size: 1.1rem;
+    }
+
+    .feature-list li {
+        padding: 10px 0;
+        color: #555;
+    }
+
+    .reviews-section {
+        padding: 40px 0;
+    }
+
+    .review-card {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        height: 100%;
+        transition: transform 0.3s ease;
+    }
+
+    .review-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .review-rating {
+        margin-bottom: 15px;
+    }
+
+    .star {
+        color: #ffc107;
+        font-size: 1.2rem;
+    }
+
+    .review-comment {
+        font-style: italic;
+        color: #555;
+        margin-bottom: 20px;
+        min-height: 80px;
+    }
+
+    .review-author {
+        border-top: 1px solid #eee;
+        padding-top: 15px;
+    }
+
+    .admin-reply {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 3px solid #667eea;
+    }
+
+    .admin-reply strong {
+        color: #667eea;
+    }
+
+    .cta-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 60px 40px;
+        border-radius: 15px;
+    }
+
+    .cta-section h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    @@media (max-width: 768px) {
+        .hero-title {
+            font-size: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+        }
+
+        .hero-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .why-choose-section {
+            padding: 40px 20px;
+        }
+    }
+</style>

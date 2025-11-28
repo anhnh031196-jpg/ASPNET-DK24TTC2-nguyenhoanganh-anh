@@ -1,0 +1,49 @@
+@model dynamic
+
+@{
+    ViewData["Title"] = "Quản Lý Khách Hàng";
+}
+
+<div class="fade-in">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>👥 Quản Lý Khách Hàng</h2>
+        <a asp-action="Index" class="btn btn-outline-primary">← Về Dashboard</a>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            @if (Model.Count == 0)
+            {
+                <div class="alert alert-info text-center">
+                    <p class="mb-0">Chưa có khách hàng nào.</p>
+                </div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Tên Khách Hàng</th>
+                                <th>Số Điện Thoại</th>
+                                <th>Tổng Đơn Hàng</th>
+                                <th>Đơn Hàng Gần Nhất</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var customer in Model)
+                            {
+                                <tr>
+                                    <td><strong>@customer.CustomerName</strong></td>
+                                    <td>@customer.PhoneNumber</td>
+                                    <td><span class="badge bg-primary">@customer.TotalBookings đơn</span></td>
+                                    <td>@customer.LastBooking.ToString("dd/MM/yyyy HH:mm")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+@model WebsiteDichVuSuaNha.Models.PricingSetting
+
+@{
+    ViewData["Title"] = "Quản Lý Bảng Giá";
+}
+
+<div class="fade-in">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>💰 Quản Lý Bảng Giá</h2>
+        <a asp-action="Index" class="btn btn-outline-primary">← Về Dashboard</a>
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">⚙️ Cài Đặt Giá</h5>
+                </div>
+                <div class="card-body">
+                    <form asp-action="UpdatePricing" method="post">
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="mb-4">
+                            <label asp-for="BaseServiceFee" class="form-label"></label>
+                            <div class="input-group">
+                                <input asp-for="BaseServiceFee" class="form-control" type="number" step="10000" required />
+                                <span class="input-group-text">VNĐ</span>
+                            </div>
+                            <span asp-validation-for="BaseServiceFee" class="text-danger"></span>
+                            <small class="text-muted">Phí khảo sát và sửa chữa cơ bản. Chi phí thực tế sẽ được báo sau khi thợ kiểm tra.</small>
+                        </div>
+
+                        <div class="alert alert-info">
+                            <strong>📊 Lưu Ý:</strong>
+                            <p class="mb-0">Đây là phí cơ bản cho mỗi đơn. Chi phí cuối cùng sẽ được thợ báo giá chi tiết tại hiện trường.</p>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">💾 Lưu Cài Đặt</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            @if (Model.UpdatedAt != DateTime.MinValue)
+            {
+                <div class="text-center mt-3 text-muted">
+                    <small>Cập nhật lần cuối: @Model.UpdatedAt.ToString("dd/MM/yyyy HH:mm")</small>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
